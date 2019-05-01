@@ -3,6 +3,10 @@
 A Common Lisp library for interacting with Jenkins.  It's been used
 with SBCL, and it ought to work with any conforming implementation.
 
+This library was designed/tested to work with Jenkins 1.x.  Some
+functionality may still work with Jenkins 2.x, but it's highly
+unlikely that everything will work with Jenkins 2 unmodified.
+
 ## Setup
 
 The best way to install this library is via
@@ -95,7 +99,8 @@ Get the build parameters for a job as a property list
 ;=> (:A-PARAMETER "a default value" :ANOTHER-PARAMETER "another default" :BOOLEAN-PARAMETER T)
 ```
 
-Kick off a build of a job:
+Kick off a build of a job (inverse to above, 'THESE-NAMES' will be
+converted to 'THESE_NAMES'):
 
 ```common-lisp
 (cl-jenkins:build-with-parameters (cl-jenkins:job *jenkins* "some_jenkins_job")
@@ -143,9 +148,10 @@ even between Jenkinses.
 
 ## Possible Caveats
 
-* This library has been tested with with Jenkins 1.x (specifically
-  a few versions around 1.6xx.x).  It's quite possible that you'll
-  need to make some edits for it to work with e.g. Jenkins 2.x
+* As mentioned in the intro, this library has been tested with with
+  Jenkins 1.x (specifically a few versions around 1.6xx.x).  It's
+  quite possible that you'll need to make some edits for it to work
+  with e.g. Jenkins 2.x
 * Some of the functionality in the library relies on certain plugins
   being installed.  Notably, some of the API for dealing with labels
   expects the Node and Label parameter plugin, though it should mostly
