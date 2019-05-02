@@ -1,7 +1,7 @@
 {
     "id": "cl-jenkins",
     "filter": "devops",
-    "image": "https://raw.githubusercontent.com/PureStorage-OpenConnect/purestorage-openconnect.github.io/master/images/22_jenkins.png",
+    "image": "http://code.purestorage.com/images/22_jenkins.png",
     "featured": 1,
     "priority": 1
 }
